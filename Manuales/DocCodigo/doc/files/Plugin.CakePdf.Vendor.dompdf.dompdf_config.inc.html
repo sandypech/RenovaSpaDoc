@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+        <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function(){
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">5621</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">44</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">7</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1134283758"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1134283758" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Canvas.html">Canvas</a></li>
+                                                                                                    <li class="class"><a href="../classes/Absolute_Positioner.html">Absolute_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/Abstract_Renderer.html">Abstract_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/AbstractPdfCrypto.html">AbstractPdfCrypto</a></li>
+                                                    <li class="class"><a href="../classes/AbstractPdfEngine.html">AbstractPdfEngine</a></li>
+                                                    <li class="class"><a href="../classes/Agencia.html">Agencia</a></li>
+                                                    <li class="class"><a href="../classes/AgenciaFixture.html">AgenciaFixture</a></li>
+                                                    <li class="class"><a href="../classes/AgenciasController.html">AgenciasController</a></li>
+                                                    <li class="class"><a href="../classes/AgenciasControllerTest.html">AgenciasControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/AgenciaTest.html">AgenciaTest</a></li>
+                                                    <li class="class"><a href="../classes/AllCakePdfTest.html">AllCakePdfTest</a></li>
+                                                    <li class="class"><a href="../classes/AppController.html">AppController</a></li>
+                                                    <li class="class"><a href="../classes/AppHelper.html">AppHelper</a></li>
+                                                    <li class="class"><a href="../classes/AppModel.html">AppModel</a></li>
+                                                    <li class="class"><a href="../classes/AppShell.html">AppShell</a></li>
+                                                    <li class="class"><a href="../classes/Attribute_Translator.html">Attribute_Translator</a></li>
+                                                    <li class="class"><a href="../classes/Block_Frame_Decorator.html">Block_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Block_Frame_Reflower.html">Block_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Block_Positioner.html">Block_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/Block_Renderer.html">Block_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/bmp.html">bmp</a></li>
+                                                    <li class="class"><a href="../classes/Cached_PDF_Decorator.html">Cached_PDF_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/CakePdf.html">CakePdf</a></li>
+                                                    <li class="class"><a href="../classes/CakePdfTest.html">CakePdfTest</a></li>
+                                                    <li class="class"><a href="../classes/Canvas_Factory.html">Canvas_Factory</a></li>
+                                                    <li class="class"><a href="../classes/Cellmap.html">Cellmap</a></li>
+                                                    <li class="class"><a href="../classes/CGIF.html">CGIF</a></li>
+                                                    <li class="class"><a href="../classes/CGIFCOLORTABLE.html">CGIFCOLORTABLE</a></li>
+                                                    <li class="class"><a href="../classes/CGIFFILEHEADER.html">CGIFFILEHEADER</a></li>
+                                                    <li class="class"><a href="../classes/CGIFIMAGE.html">CGIFIMAGE</a></li>
+                                                    <li class="class"><a href="../classes/CGIFIMAGEHEADER.html">CGIFIMAGEHEADER</a></li>
+                                                    <li class="class"><a href="../classes/CGIFLZW.html">CGIFLZW</a></li>
+                                                    <li class="class"><a href="../classes/CircustanciasMedica.html">CircustanciasMedica</a></li>
+                                                    <li class="class"><a href="../classes/CircustanciasMedicaFixture.html">CircustanciasMedicaFixture</a></li>
+                                                    <li class="class"><a href="../classes/CircustanciasMedicasController.html">CircustanciasMedicasController</a></li>
+                                                    <li class="class"><a href="../classes/CircustanciasMedicasControllerTest.html">CircustanciasMedicasControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/CircustanciasMedicaTest.html">CircustanciasMedicaTest</a></li>
+                                                    <li class="class"><a href="../classes/Cliente.html">Cliente</a></li>
+                                                    <li class="class"><a href="../classes/ClienteFixture.html">ClienteFixture</a></li>
+                                                    <li class="class"><a href="../classes/ClientesController.html">ClientesController</a></li>
+                                                    <li class="class"><a href="../classes/ClientesControllerTest.html">ClientesControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/ClienteTest.html">ClienteTest</a></li>
+                                                    <li class="class"><a href="../classes/Cpdf.html">Cpdf</a></li>
+                                                    <li class="class"><a href="../classes/CPDF_Adapter.html">CPDF_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/CSS_Color.html">CSS_Color</a></li>
+                                                    <li class="class"><a href="../classes/DATABASE_CONFIG.html">DATABASE_CONFIG</a></li>
+                                                    <li class="class"><a href="../classes/Datamatrix.html">Datamatrix</a></li>
+                                                    <li class="class"><a href="../classes/DbAclSchema.html">DbAclSchema</a></li>
+                                                    <li class="class"><a href="../classes/directw.html">directw</a></li>
+                                                    <li class="class"><a href="../classes/DOMPDF.html">DOMPDF</a></li>
+                                                    <li class="class"><a href="../classes/DOMPDF_Exception.html">DOMPDF_Exception</a></li>
+                                                    <li class="class"><a href="../classes/DOMPDF_Internal_Exception.html">DOMPDF_Internal_Exception</a></li>
+                                                    <li class="class"><a href="../classes/DomPdfEngine.html">DomPdfEngine</a></li>
+                                                    <li class="class"><a href="../classes/FilterASCII85.html">FilterASCII85</a></li>
+                                                    <li class="class"><a href="../classes/FilterLZW.html">FilterLZW</a></li>
+                                                    <li class="class"><a href="../classes/Font_Metrics.html">Font_Metrics</a></li>
+                                                    <li class="class"><a href="../classes/form.html">form</a></li>
+                                                    <li class="class"><a href="../classes/fpdi_pdf_parser.html">fpdi_pdf_parser</a></li>
+                                                    <li class="class"><a href="../classes/Frame.html">Frame</a></li>
+                                                    <li class="class"><a href="../classes/Frame_Decorator.html">Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Frame_Factory.html">Frame_Factory</a></li>
+                                                    <li class="class"><a href="../classes/Frame_Reflower.html">Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Frame_Tree.html">Frame_Tree</a></li>
+                                                    <li class="class"><a href="../classes/FrameList.html">FrameList</a></li>
+                                                    <li class="class"><a href="../classes/FrameListIterator.html">FrameListIterator</a></li>
+                                                    <li class="class"><a href="../classes/FrameTreeIterator.html">FrameTreeIterator</a></li>
+                                                    <li class="class"><a href="../classes/FrameTreeList.html">FrameTreeList</a></li>
+                                                    <li class="class"><a href="../classes/GD_Adapter.html">GD_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/Generated_Frame_Reflower.html">Generated_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/grad.html">grad</a></li>
+                                                    <li class="class"><a href="../classes/Hotele.html">Hotele</a></li>
+                                                    <li class="class"><a href="../classes/HoteleFixture.html">HoteleFixture</a></li>
+                                                    <li class="class"><a href="../classes/HotelesController.html">HotelesController</a></li>
+                                                    <li class="class"><a href="../classes/HotelesControllerTest.html">HotelesControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/HoteleTest.html">HoteleTest</a></li>
+                                                    <li class="class"><a href="../classes/I18nSchema.html">I18nSchema</a></li>
+                                                    <li class="class"><a href="../classes/Idioma.html">Idioma</a></li>
+                                                    <li class="class"><a href="../classes/IdiomaFixture.html">IdiomaFixture</a></li>
+                                                    <li class="class"><a href="../classes/IdiomasController.html">IdiomasController</a></li>
+                                                    <li class="class"><a href="../classes/IdiomasControllerTest.html">IdiomasControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/IdiomaTest.html">IdiomaTest</a></li>
+                                                    <li class="class"><a href="../classes/Image_Cache.html">Image_Cache</a></li>
+                                                    <li class="class"><a href="../classes/Image_Frame_Decorator.html">Image_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Image_Frame_Reflower.html">Image_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Image_Renderer.html">Image_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/indic.html">indic</a></li>
+                                                    <li class="class"><a href="../classes/Inline_Frame_Decorator.html">Inline_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Inline_Frame_Reflower.html">Inline_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Inline_Positioner.html">Inline_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/Inline_Renderer.html">Inline_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/Javascript_Embedder.html">Javascript_Embedder</a></li>
+                                                    <li class="class"><a href="../classes/List_Bullet_Frame_Decorator.html">List_Bullet_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/List_Bullet_Frame_Reflower.html">List_Bullet_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/List_Bullet_Image_Frame_Decorator.html">List_Bullet_Image_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/List_Bullet_Positioner.html">List_Bullet_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/List_Bullet_Renderer.html">List_Bullet_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/MC_TCPDF.html">MC_TCPDF</a></li>
+                                                    <li class="class"><a href="../classes/mPDF.html">mPDF</a></li>
+                                                    <li class="class"><a href="../classes/MpdfEngine.html">MpdfEngine</a></li>
+                                                    <li class="class"><a href="../classes/MYPDF.html">MYPDF</a></li>
+                                                    <li class="class"><a href="../classes/MYPDF.html">MYPDF</a></li>
+                                                    <li class="class"><a href="../classes/MYPDF.html">MYPDF</a></li>
+                                                    <li class="class"><a href="../classes/MYPDF.html">MYPDF</a></li>
+                                                    <li class="class"><a href="../classes/Null_Frame_Decorator.html">Null_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Null_Frame_Reflower.html">Null_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Null_Positioner.html">Null_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/Opinione.html">Opinione</a></li>
+                                                    <li class="class"><a href="../classes/OpinioneFixture.html">OpinioneFixture</a></li>
+                                                    <li class="class"><a href="../classes/OpinionesController.html">OpinionesController</a></li>
+                                                    <li class="class"><a href="../classes/OpinionesControllerTest.html">OpinionesControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/OpinioneTest.html">OpinioneTest</a></li>
+                                                    <li class="class"><a href="../classes/Page_Cache.html">Page_Cache</a></li>
+                                                    <li class="class"><a href="../classes/Page_Frame_Decorator.html">Page_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Page_Frame_Reflower.html">Page_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/PagesController.html">PagesController</a></li>
+                                                    <li class="class"><a href="../classes/Paise.html">Paise</a></li>
+                                                    <li class="class"><a href="../classes/PaiseFixture.html">PaiseFixture</a></li>
+                                                    <li class="class"><a href="../classes/PaisesController.html">PaisesController</a></li>
+                                                    <li class="class"><a href="../classes/PaisesControllerTest.html">PaisesControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/PaiseTest.html">PaiseTest</a></li>
+                                                    <li class="class"><a href="../classes/PDF417.html">PDF417</a></li>
+                                                    <li class="class"><a href="../classes/pdf_context.html">pdf_context</a></li>
+                                                    <li class="class"><a href="../classes/pdf_parser.html">pdf_parser</a></li>
+                                                    <li class="class"><a href="../classes/PDFBarcode.html">PDFBarcode</a></li>
+                                                    <li class="class"><a href="../classes/PDFLib_Adapter.html">PDFLib_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/PdfTest2Engine.html">PdfTest2Engine</a></li>
+                                                    <li class="class"><a href="../classes/PdfTestEngine.html">PdfTestEngine</a></li>
+                                                    <li class="class"><a href="../classes/PdfTestPostsController.html">PdfTestPostsController</a></li>
+                                                    <li class="class"><a href="../classes/PdftkCrypto.html">PdftkCrypto</a></li>
+                                                    <li class="class"><a href="../classes/PdfView.html">PdfView</a></li>
+                                                    <li class="class"><a href="../classes/PdfViewTest.html">PdfViewTest</a></li>
+                                                    <li class="class"><a href="../classes/PHP_Evaluator.html">PHP_Evaluator</a></li>
+                                                    <li class="class"><a href="../classes/Positioner.html">Positioner</a></li>
+                                                    <li class="class"><a href="../classes/QRcode.html">QRcode</a></li>
+                                                    <li class="class"><a href="../classes/Renderer.html">Renderer</a></li>
+                                                    <li class="class"><a href="../classes/Sesione.html">Sesione</a></li>
+                                                    <li class="class"><a href="../classes/SesioneFixture.html">SesioneFixture</a></li>
+                                                    <li class="class"><a href="../classes/SesionesController.html">SesionesController</a></li>
+                                                    <li class="class"><a href="../classes/SesionesControllerTest.html">SesionesControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/SesioneTest.html">SesioneTest</a></li>
+                                                    <li class="class"><a href="../classes/SessionsSchema.html">SessionsSchema</a></li>
+                                                    <li class="class"><a href="../classes/Style.html">Style</a></li>
+                                                    <li class="class"><a href="../classes/Stylesheet.html">Stylesheet</a></li>
+                                                    <li class="class"><a href="../classes/SVG.html">SVG</a></li>
+                                                    <li class="class"><a href="../classes/Table_Cell_Frame_Decorator.html">Table_Cell_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Table_Cell_Frame_Reflower.html">Table_Cell_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Table_Cell_Positioner.html">Table_Cell_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/Table_Cell_Renderer.html">Table_Cell_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/Table_Frame_Decorator.html">Table_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Table_Frame_Reflower.html">Table_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Table_Row_Frame_Decorator.html">Table_Row_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Table_Row_Frame_Reflower.html">Table_Row_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Table_Row_Group_Frame_Decorator.html">Table_Row_Group_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Table_Row_Group_Frame_Reflower.html">Table_Row_Group_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Table_Row_Positioner.html">Table_Row_Positioner</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF.html">TCPDF</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF2DBarcode.html">TCPDF2DBarcode</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF_Adapter.html">TCPDF_Adapter</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF_ENCODING_MAPS.html">TCPDF_ENCODING_MAPS</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF_FILTERS.html">TCPDF_FILTERS</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF_PARSER.html">TCPDF_PARSER</a></li>
+                                                    <li class="class"><a href="../classes/TCPDF_UNICODE_DATA.html">TCPDF_UNICODE_DATA</a></li>
+                                                    <li class="class"><a href="../classes/TCPDFBarcode.html">TCPDFBarcode</a></li>
+                                                    <li class="class"><a href="../classes/TcpdfEngine.html">TcpdfEngine</a></li>
+                                                    <li class="class"><a href="../classes/Terapeuta.html">Terapeuta</a></li>
+                                                    <li class="class"><a href="../classes/TerapeutaFixture.html">TerapeutaFixture</a></li>
+                                                    <li class="class"><a href="../classes/TerapeutasController.html">TerapeutasController</a></li>
+                                                    <li class="class"><a href="../classes/TerapeutasControllerTest.html">TerapeutasControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/TerapeutaTest.html">TerapeutaTest</a></li>
+                                                    <li class="class"><a href="../classes/Text_Frame_Decorator.html">Text_Frame_Decorator</a></li>
+                                                    <li class="class"><a href="../classes/Text_Frame_Reflower.html">Text_Frame_Reflower</a></li>
+                                                    <li class="class"><a href="../classes/Text_Renderer.html">Text_Renderer</a></li>
+                                                    <li class="class"><a href="../classes/TOC_TCPDF.html">TOC_TCPDF</a></li>
+                                                    <li class="class"><a href="../classes/tocontents.html">tocontents</a></li>
+                                                    <li class="class"><a href="../classes/Tratamiento.html">Tratamiento</a></li>
+                                                    <li class="class"><a href="../classes/TratamientoFixture.html">TratamientoFixture</a></li>
+                                                    <li class="class"><a href="../classes/TratamientosController.html">TratamientosController</a></li>
+                                                    <li class="class"><a href="../classes/TratamientosControllerTest.html">TratamientosControllerTest</a></li>
+                                                    <li class="class"><a href="../classes/TratamientoTest.html">TratamientoTest</a></li>
+                                                    <li class="class"><a href="../classes/TTFontFile.html">TTFontFile</a></li>
+                                                    <li class="class"><a href="../classes/WkHtmlToPdfEngine.html">WkHtmlToPdfEngine</a></li>
+                                                    <li class="class"><a href="../classes/wmf.html">wmf</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content file">
+                    <nav>
+                                                                    </nav>
+
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+                    <h1><small></small>dompdf_config.inc.php</h1>
+                    <p><em>DOMPDF - PHP5 HTML to PDF renderer</em></p>
+                    <p>File: $RCSfile: dompdf_config.inc.php,v $
+Created on: 2004-08-04</p>
+<p>Copyright (c) 2004 - Benj Carson <a href="mailto:benjcarson@digitaljunkies.ca">benjcarson@digitaljunkies.ca</a></p>
+<p>This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.</p>
+<p>This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.</p>
+<p>You should have received a copy of the GNU Lesser General Public License
+along with this library in the file LICENSE.LGPL; if not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA</p>
+<p>Alternatively, you may distribute this software under the terms of the
+PHP License, version 3.0 or later.  A copy of this license should have
+been distributed with this file in the file LICENSE.PHP .  If this is not
+the case, you can obtain a copy at <a href="http://www.php.net/license/3_0.txt">http://www.php.net/license/3_0.txt</a>.</p>
+<p>The latest version of DOMPDF might be available at:
+<a href="http://www.dompdf.com/">http://www.dompdf.com/</a></p>
+
+                    
+                    
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                                                    <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\dompdf
+
+Changes</div></dd>
+                        
+                                                                                    <dt>See also</dt>
+                                                                                        <dd><a href="http://www.dompdf.com/"><div class="namespace-wrapper">http://www.dompdf.com/</div></a></dd>
+                                                    
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                                    <tr>
+                                <th>
+                                    copyright
+                                </th>
+                                <td>
+                                                                            <p>2004 Benj Carson</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    author
+                                </th>
+                                <td>
+                                                                            <p>Benj Carson <a href="mailto:benjcarson@digitaljunkies.ca">benjcarson@digitaljunkies.ca</a></p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    contributor
+                                </th>
+                                <td>
+                                                                            <p>Helmut Tischer <a href="mailto:htischer@weihenstephan.org">htischer@weihenstephan.org</a></p>
+                                                                            <p>Helmut Tischer <a href="mailto:htischer@weihenstephan.org">htischer@weihenstephan.org</a></p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    version
+                                </th>
+                                <td>
+                                                                            <ul>
+<li>Allow overriding of configuration settings by calling php script.
+This allows replacing of dompdf by a new version in an application
+without any modification,</li>
+<li>Optionally separate font cache folder from font folder.
+This allows write protecting the entire installation</li>
+<li>Add settings to enable/disable additional debug output categories</li>
+<li>Change some defaults to more practical values</li>
+<li>Add comments about configuration parameter implications</li>
+</ul>
+                                                                    </td>
+                            </tr>
+                                            </table>
+
+                </aside>
+            </div>
+
+                        <div class="row-fluid">
+                <section class="span8 content file">
+                    <h2>Constants</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_DIR" name="constant_DOMPDF_DIR" class="anchor"></a>
+            <article id="constant_DOMPDF_DIR" class="constant">
+                <h3 class="">DOMPDF_DIR</h3>
+                <pre class="signature">DOMPDF_DIR</pre>
+                <p><em>The root of your DOMPDF installation</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_INC_DIR" name="constant_DOMPDF_INC_DIR" class="anchor"></a>
+            <article id="constant_DOMPDF_INC_DIR" class="constant">
+                <h3 class="">DOMPDF_INC_DIR</h3>
+                <pre class="signature">DOMPDF_INC_DIR</pre>
+                <p><em>The location of the DOMPDF include directory</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_LIB_DIR" name="constant_DOMPDF_LIB_DIR" class="anchor"></a>
+            <article id="constant_DOMPDF_LIB_DIR" class="constant">
+                <h3 class="">DOMPDF_LIB_DIR</h3>
+                <pre class="signature">DOMPDF_LIB_DIR</pre>
+                <p><em>The location of the DOMPDF lib directory</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_FONT_DIR" name="constant_DOMPDF_FONT_DIR" class="anchor"></a>
+            <article id="constant_DOMPDF_FONT_DIR" class="constant">
+                <h3 class="">DOMPDF_FONT_DIR</h3>
+                <pre class="signature">DOMPDF_FONT_DIR</pre>
+                <p><em>The location of the DOMPDF font directory</em></p>
+                <p>If DOMPDF_FONT_DIR identical to DOMPDF_FONT_CACHE or user executing DOMPDF from the CLI,
+this directory must be writable by the webserver process ().
+<em>Please note the trailing slash.</em></p>
+<p>Notes regarding fonts:
+Additional .afm font metrics can be added by executing load_font.php from command line.
+Converting ttf fonts to afm requires the external tool referenced by TTF2AFM</p>
+<p>Only the original "Base 14 fonts" are present on all pdf viewers. Additional fonts must
+be embedded in the pdf file or the PDF may not display correctly. This can significantly
+increase file size and could violate copyright provisions of a font. Font embedding is
+not currently supported (? via HT).</p>
+<p>Any font specification in the source HTML is translated to the closest font available
+in the font directory.</p>
+<p>The pdf standard "Base 14 fonts" are:
+Courier, Courier-Bold, Courier-BoldOblique, Courier-Oblique,
+Helvetica, Helvetica-Bold, Helvetica-BoldOblique, Helvetica-Oblique,
+Times-Roman, Times-Bold, Times-BoldItalic, Times-Italic,
+Symbol,
+ZapfDingbats,</p>
+<p><em>Please note the trailing slash.</em></p>
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_FONT_CACHE" name="constant_DOMPDF_FONT_CACHE" class="anchor"></a>
+            <article id="constant_DOMPDF_FONT_CACHE" class="constant">
+                <h3 class="">DOMPDF_FONT_CACHE</h3>
+                <pre class="signature">DOMPDF_FONT_CACHE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_TEMP_DIR" name="constant_DOMPDF_TEMP_DIR" class="anchor"></a>
+            <article id="constant_DOMPDF_TEMP_DIR" class="constant">
+                <h3 class="">DOMPDF_TEMP_DIR</h3>
+                <pre class="signature">DOMPDF_TEMP_DIR</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_CHROOT" name="constant_DOMPDF_CHROOT" class="anchor"></a>
+            <article id="constant_DOMPDF_CHROOT" class="constant">
+                <h3 class="">DOMPDF_CHROOT</h3>
+                <pre class="signature">DOMPDF_CHROOT</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_UNICODE_ENABLED" name="constant_DOMPDF_UNICODE_ENABLED" class="anchor"></a>
+            <article id="constant_DOMPDF_UNICODE_ENABLED" class="constant">
+                <h3 class="">DOMPDF_UNICODE_ENABLED</h3>
+                <pre class="signature">DOMPDF_UNICODE_ENABLED</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_TTF2AFM" name="constant_TTF2AFM" class="anchor"></a>
+            <article id="constant_TTF2AFM" class="constant">
+                <h3 class="">TTF2AFM</h3>
+                <pre class="signature">TTF2AFM</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_PDF_BACKEND" name="constant_DOMPDF_PDF_BACKEND" class="anchor"></a>
+            <article id="constant_DOMPDF_PDF_BACKEND" class="constant">
+                <h3 class="">DOMPDF_PDF_BACKEND</h3>
+                <pre class="signature">DOMPDF_PDF_BACKEND</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_DEFAULT_MEDIA_TYPE" name="constant_DOMPDF_DEFAULT_MEDIA_TYPE" class="anchor"></a>
+            <article id="constant_DOMPDF_DEFAULT_MEDIA_TYPE" class="constant">
+                <h3 class="">DOMPDF_DEFAULT_MEDIA_TYPE</h3>
+                <pre class="signature">DOMPDF_DEFAULT_MEDIA_TYPE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_DEFAULT_PAPER_SIZE" name="constant_DOMPDF_DEFAULT_PAPER_SIZE" class="anchor"></a>
+            <article id="constant_DOMPDF_DEFAULT_PAPER_SIZE" class="constant">
+                <h3 class="">DOMPDF_DEFAULT_PAPER_SIZE</h3>
+                <pre class="signature">DOMPDF_DEFAULT_PAPER_SIZE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_DEFAULT_FONT" name="constant_DOMPDF_DEFAULT_FONT" class="anchor"></a>
+            <article id="constant_DOMPDF_DEFAULT_FONT" class="constant">
+                <h3 class="">DOMPDF_DEFAULT_FONT</h3>
+                <pre class="signature">DOMPDF_DEFAULT_FONT</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_DPI" name="constant_DOMPDF_DPI" class="anchor"></a>
+            <article id="constant_DOMPDF_DPI" class="constant">
+                <h3 class="">DOMPDF_DPI</h3>
+                <pre class="signature">DOMPDF_DPI</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_ENABLE_PHP" name="constant_DOMPDF_ENABLE_PHP" class="anchor"></a>
+            <article id="constant_DOMPDF_ENABLE_PHP" class="constant">
+                <h3 class="">DOMPDF_ENABLE_PHP</h3>
+                <pre class="signature">DOMPDF_ENABLE_PHP</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DOMPDF_ENABLE_REMOTE" name="constant_DOMPDF_ENABLE_REMOTE" class="anchor"></a>
+            <article id="constant_DOMPDF_ENABLE_REMOTE" class="constant">
+                <h3 class="">DOMPDF_ENABLE_REMOTE</h3>
+                <pre class="signature">DOMPDF_ENABLE_REMOTE</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DEBUGPNG" name="constant_DEBUGPNG" class="anchor"></a>
+            <article id="constant_DEBUGPNG" class="constant">
+                <h3 class="">DEBUGPNG</h3>
+                <pre class="signature">DEBUGPNG</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DEBUGKEEPTEMP" name="constant_DEBUGKEEPTEMP" class="anchor"></a>
+            <article id="constant_DEBUGKEEPTEMP" class="constant">
+                <h3 class="">DEBUGKEEPTEMP</h3>
+                <pre class="signature">DEBUGKEEPTEMP</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_DEBUGCSS" name="constant_DEBUGCSS" class="anchor"></a>
+            <article id="constant_DEBUGCSS" class="constant">
+                <h3 class="">DEBUGCSS</h3>
+                <pre class="signature">DEBUGCSS</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                <dt>File</dt>
+                <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                        <div class="row-fluid">
+                <section class="span8 content file">
+                    <h2>Functions</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_DOMPDF_autoload" name="method_DOMPDF_autoload" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">DOMPDF_autoload()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">DOMPDF_autoload(string  <span class="argument">$class</span>) </pre>
+                <p><em>DOMPDF autoload function</em></p>
+                <p>If you have an existing autoload function, add a call to this function
+from your existing __autoload() implementation.</p>
+<p>TODO: use spl_autoload(), if available</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$class </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___autoload" name="method___autoload" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">__autoload()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__autoload(string  <span class="argument">$class</span>) </pre>
+                <p><em>Default __autoload() function</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$class </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                                                            <p>dompdf</p>
+<p>Changes</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label"></h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Plugin\CakePdf\Vendor\dompdf\dompdf_config.inc.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on March 9th, 2016 at 17:10.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
