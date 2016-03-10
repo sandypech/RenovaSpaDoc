@@ -1,0 +1,104 @@
+<?php
+App::uses('AppController', 'Controller');
+/**
+ * Opiniones Controller
+ *
+ * @property Opinione $Opinione
+ * @property PaginatorComponent $Paginator
+ */
+class OpinionesController extends AppController {
+
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator');
+
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+		$this->Opinione->recursive = 0;
+		$this->set('opiniones', $this->Paginator->paginate());
+	}
+
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		if (!$this->Opinione->exists($id)) {
+			throw new NotFoundException(__('Invalid opinione'));
+		}
+		$options = array('conditions' => array('Opinione.' . $this->Opinione->primaryKey => $id));
+		$this->set('opinione', $this->Opinione->find('first', $options));
+	}
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function add() {
+		if ($this->request->is('post')) {
+			$this->Opinione->create();
+			if ($this->Opinione->save($this->request->data)) {
+				$this->Session->setFlash(__('The opinione has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The opinione could not be saved. Please, try again.'));
+			}
+		}
+	}
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function edit($id = null) {
+		if (!$this->Opinione->exists($id)) {
+			throw new NotFoundException(__('Invalid opinione'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->Opinione->save($this->request->data)) {
+				$this->Session->setFlash(__('The opinione has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The opinione could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('Opinione.' . $this->Opinione->primaryKey => $id));
+			$this->request->data = $this->Opinione->find('first', $options);
+		}
+	}
+
+/**
+ * delete method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function delete($id = null) {
+		$this->Opinione->id = $id;
+		if (!$this->Opinione->exists()) {
+			throw new NotFoundException(__('Invalid opinione'));
+		}
+		$this->request->allowMethod('post', 'delete');
+		if ($this->Opinione->delete()) {
+			$this->Session->setFlash(__('The opinione has been deleted.'));
+		} else {
+			$this->Session->setFlash(__('The opinione could not be deleted. Please, try again.'));
+		}
+		return $this->redirect(array('action' => 'index'));
+	}
+}
